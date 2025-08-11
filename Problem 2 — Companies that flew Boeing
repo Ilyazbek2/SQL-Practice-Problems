@@ -1,0 +1,13 @@
+Task: Which companies have flown on Boeing?
+Fields in the resulting table:
+
+name
+
+Notes: Return each company once.
+
+Solution (example):
+
+SELECT DISTINCT c.name
+FROM Company c
+JOIN Trip t ON c.id = t.company
+WHERE t.plane LIKE 'Boeing%';
