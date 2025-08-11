@@ -1,0 +1,11 @@
+Task: Print the number of trips completed on TU-134.
+Fields in the resulting table:
+
+count
+
+Notes: Use AS count for the aggregate.
+
+Solution (example):
+SELECT COUNT(*) AS count
+FROM Trip
+WHERE plane = 'TU-134';
