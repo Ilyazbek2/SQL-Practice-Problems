@@ -1,0 +1,16 @@
+Task: For each company, find the longest single-flight duration (time_in - time_out).
+Fields in the resulting table:
+
+name
+
+max_flight_time (format HH:MM:SS — alias using AS)
+
+Notes: Use TIMEDIFF to compute duration and MAX() grouped by company.
+
+Solution (example):
+
+SELECT c.name,
+       SEC_TO_TIME(MAX(TIME_TO_SEC(TIMEDIFF(t.time_in, t.time_out)))) AS max_flight_time
+FROM Company c
+JOIN Trip t ON c.id = t.company
+GROUP BY c.name;
