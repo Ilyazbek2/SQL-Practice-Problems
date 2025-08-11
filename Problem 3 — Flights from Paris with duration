@@ -1,0 +1,15 @@
+Task: What cities can I fly to from Paris and how long will it take?
+Fields in the resulting table:
+
+town_to
+
+flight_time (format HH:MM:SS — use AS flight_time)
+
+Notes: Use TIMEDIFF(time_in, time_out) (MySQL) or equivalent.
+
+Solution (example):
+
+SELECT town_to,
+       TIMEDIFF(time_in, time_out) AS flight_time
+FROM Trip
+WHERE town_from = 'Paris';
