@@ -1,0 +1,11 @@
+Task: What companies organize flights from Vladivostok?
+Fields in the resulting table:
+
+name
+
+Solution (example):
+
+SELECT DISTINCT c.name
+FROM Company c
+JOIN Trip t ON c.id = t.company
+WHERE t.town_from = 'Vladivostok';
